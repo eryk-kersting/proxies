@@ -52,6 +52,11 @@ while True:
         user_input = input(f"Factor the polynomial {polynomial}: ")
         if user_input == "$":
             break
+        answer = user_input.split(',')
+        if answer[0] == str(roots[0]) and answer[1] == str(roots[1]):
+            print("Correct!")
+        else: 
+            print("Incorrect. The correct answer is: ", roots)
 
     else:
         print("can't handle that right now")
