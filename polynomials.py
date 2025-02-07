@@ -44,6 +44,7 @@ while True:
         if product < 0:
             product_string = '- ' + str(-product) 
         elif product > 0:
+
             product_string = '+ ' + str(product)
         else: 
             product_string = ''
@@ -53,7 +54,11 @@ while True:
         if user_input == "$":
             break
         answer = user_input.split(',')
-        if answer[0] == str(roots[0]) and answer[1] == str(roots[1]):
+        if not answer or answer == [""]:
+            print("You didn't enter anything")
+        elif len(answer) != 2:
+            print("Please enter exactly two numbers separated by a comma")
+        elif {int(answer[0]), int(answer[1])} == {roots[0], roots[1]}:
             print("Correct!")
         else: 
             print("Incorrect. The correct answer is: ", roots)
